@@ -2,7 +2,6 @@ import qbs 1.0
 
 DynamicLibrary {
     name: "qsyncable"
-    destinationDirectory: "lib"
     Depends { name: "cpp" }
     cpp.cxxLanguageVersion:"c++14"
     cpp.includePaths: sourceDirectory

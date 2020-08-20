@@ -1,6 +1,6 @@
 import qbs 1.0
 
-DynamicLibrary {
+StaticLibrary {
     name: "qsyncable"
     Depends { name: "cpp" }
     cpp.cxxLanguageVersion:"c++14"
@@ -36,4 +36,10 @@ DynamicLibrary {
         "qsyncablefunctions.cpp",
         "qsyncableqmlwrapper.cpp"
     ]
+
+    Export {
+        Depends { name: "Qt.quick" }
+        Depends { name: "cpp" }
+        cpp.includePaths: [ "" ]
+    }
 }

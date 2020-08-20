@@ -13,6 +13,12 @@ QSUuid::QSUuid(QObject *parent) : QObject(parent)
 
 }
 
+QObject * QSUuid::qmlSingletonProvider (QQmlEngine * qmlEngine, QJSEngine * jsEngine) {
+    Q_UNUSED (qmlEngine)
+    Q_UNUSED (jsEngine)
+    return new QSUuid;
+}
+
 /*! \qmlmethod string Uuid::create()
 
   Call this function to generate a random Uuid in string format.
